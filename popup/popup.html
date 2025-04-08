@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log Time Colors</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        padding: 10px 15px;
+        min-width: 320px; /* Adjust as needed */
+        background-color: #f9f9f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 1.2em;
+        margin: 0 0 10px 0;
+        color: #1a73e8; /* Google Blue */
+        border-bottom: 1px solid #eee;
+        padding-bottom: 5px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        font-size: 0.9em;
+        background-color: #fff;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 6px 8px;
+        text-align: left;
+        vertical-align: middle;
+      }
+
+      th {
+        background-color: #f2f2f2;
+        font-weight: 600;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      .color-swatch {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        border: 1px solid #ccc;
+        margin-right: 6px;
+        vertical-align: middle;
+        border-radius: 2px;
+      }
+
+      /* Define swatch background colors based on styles.css */
+      .swatch-segment01 {
+        background-color: #9a0200;
+      }
+      .swatch-segment02 {
+        background-color: #019a00;
+      }
+      .swatch-segment03 {
+        background-color: #9b00ff;
+      }
+      .swatch-segment04 {
+        background-color: #f35999;
+      }
+      .swatch-segment05 {
+        background-color: #004eff;
+      }
+      .swatch-segment06 {
+        background-color: #ff4c01;
+      }
+      .swatch-segment07 {
+        background-color: #9a0200;
+      } /* Note: Same as segment01 */
+      .swatch-segment08 {
+        background-color: #fd9a00;
+      }
+      .swatch-segment09 {
+        background-color: #67b4ff;
+      }
+      .swatch-segment10 {
+        background-color: #803200;
+      }
+      .swatch-segment11 {
+        background-color: #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Log Timestamp Colors</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Time Since Log Entry</th>
+          <th>Color</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data derived from content.js DEFAULT_THRESHOLDS and styles.css -->
+        <tr>
+          <td>Up to 5 minutes</td>
+          <td><span class="color-swatch swatch-segment01"></span> #9a0200</td>
+        </tr>
+        <tr>
+          <td>5 - 15 minutes</td>
+          <td><span class="color-swatch swatch-segment02"></span> #019a00</td>
+        </tr>
+        <tr>
+          <td>15 - 30 minutes</td>
+          <td><span class="color-swatch swatch-segment03"></span> #9b00ff</td>
+        </tr>
+        <tr>
+          <td>30 minutes - 1 hour</td>
+          <td><span class="color-swatch swatch-segment04"></span> #f35999</td>
+        </tr>
+        <tr>
+          <td>1 hour - 2 hours</td>
+          <td><span class="color-swatch swatch-segment05"></span> #004eff</td>
+        </tr>
+        <tr>
+          <td>2 hours - 5 hours</td>
+          <td><span class="color-swatch swatch-segment06"></span> #ff4c01</td>
+        </tr>
+        <tr>
+          <td>5 hours - 12 hours</td>
+          <td><span class="color-swatch swatch-segment07"></span> #9a0200</td>
+        </tr>
+        <tr>
+          <td>12 hours - 1 day</td>
+          <td><span class="color-swatch swatch-segment08"></span> #fd9a00</td>
+        </tr>
+        <tr>
+          <td>1 day - 2 days</td>
+          <td><span class="color-swatch swatch-segment09"></span> #67b4ff</td>
+        </tr>
+        <tr>
+          <td>2 days - 1 week</td>
+          <td><span class="color-swatch swatch-segment10"></span> #803200</td>
+        </tr>
+        <tr>
+          <td>Over 1 week</td>
+          <td><span class="color-swatch swatch-segment11"></span> #000000</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
