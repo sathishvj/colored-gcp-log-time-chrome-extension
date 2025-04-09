@@ -1,12 +1,12 @@
 /* Styles for the timestamp colors */
 .segment01 {
-  color: #9a0200 !important;
+  color: #000000 !important;
 }
 .segment02 {
-  color: #019a00 !important;
+  color: #9b00ff !important;
 }
 .segment03 {
-  color: #9b00ff !important;
+  color: #019a00 !important;
 }
 .segment04 {
   color: #f35999 !important;
@@ -18,17 +18,17 @@
   color: #ff4c01 !important;
 }
 .segment07 {
-  color: #9a0200 !important;
+  color: #6e687d !important;
 }
 .segment08 {
-  color: #fd9a00 !important;
+  color: #9a0200 !important;
 }
 .segment09 {
   color: #67b4ff !important;
 }
 .segment10 {
-  color: #803200 !important;
+  color: #fd9a00 !important;
 }
 .segment11 {
-  color: #000000 !important;
+  color: #5f00dc !important;
 }

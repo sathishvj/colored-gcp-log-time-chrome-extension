@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Colored GCP Log Time",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Adds colored timestamps to console logs based on recency",
   "host_permissions": ["https://console.cloud.google.com/logs*"],
   "action": {
