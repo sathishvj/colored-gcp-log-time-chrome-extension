@@ -17,6 +17,7 @@ const DEFAULT_THRESHOLDS = {
 
 // User settings
 let thresholds = DEFAULT_THRESHOLDS;
+let shouldAppendTimeBlock = true; // Default value
 
 // Constants
 const ONE_MINUTE_IN_MS = 60 * 1000;
@@ -74,44 +75,102 @@ function applyTimestampColors() {
       "segment_720_1440",
       "segment_1440_2880",
       "segment_2880_10080",
-      "segment11",
+      "segment_last",
     ];
 
     // Remove existing segment classes efficiently
     element.classList.remove(...segmentClasses);
 
     // Apply appropriate class based on recency
-    let appliedClass = "segment11"; // Default to the oldest segment
+    let appliedClass = []; // Default to the oldest segment
     if (minutesAgo <= thresholds.segment_0_1) {
-      appliedClass = "segment_0_1";
+      appliedClass = ["segment_0_1"];
+      if (shouldAppendTimeBlock) {
+        // element.textContent += " (0-1 min)";
+        appliedClass.push("segment_0_1_time");
+      }
     } else if (minutesAgo <= thresholds.segment_1_2) {
-      appliedClass = "segment_1_2";
+      appliedClass = ["segment_1_2"];
+      if (shouldAppendTimeBlock) {
+        // element.textContent += " (0-1 min)";
+        appliedClass.push("segment_0_1_time");
+      }
     } else if (minutesAgo <= thresholds.segment_2_3) {
-      appliedClass = "segment_2_3";
+      appliedClass = ["segment_2_3"];
+      if (shouldAppendTimeBlock) {
+        // element.textContent += " (0-1 min)";
+        appliedClass.push("segment_2_3_time");
+      }
     } else if (minutesAgo <= thresholds.segment_3_5) {
-      appliedClass = "segment_3_5";
+      appliedClass = ["segment_3_5"];
+      if (shouldAppendTimeBlock) {
+        // element.textContent += " (0-1 min)";
+        appliedClass.push("segment_3_5_time");
+      }
     } else if (minutesAgo <= thresholds.segment_5_15) {
-      appliedClass = "segment_5_15";
+      appliedClass = ["segment_15_30"];
+      if (shouldAppendTimeBlock) {
+        // element.textContent += " (0-1 min)";
+        appliedClass.push("segment_15_30_time");
+      }
     } else if (minutesAgo <= thresholds.segment_15_30) {
-      appliedClass = "segment_15_30";
+      appliedClass = ["segment_15_30"];
+      if (shouldAppendTimeBlock) {
+        // element.textContent += " (0-1 min)";
+        appliedClass.push("segment_15_30_time");
+      }
     } else if (minutesAgo <= thresholds.segment_30_60) {
-      appliedClass = "segment_30_60";
+      appliedClass = ["segment_30_60"];
+      if (shouldAppendTimeBlock) {
+        // element.textContent += " (0-1 min)";
+        appliedClass.push("segment_30_60_time");
+      }
     } else if (minutesAgo <= thresholds.segment_60_120) {
-      appliedClass = "segment_60_120";
+      appliedClass = ["segment_60_120"];
+      if (shouldAppendTimeBlock) {
+        // element.textContent += " (0-1 min)";
+        appliedClass.push("segment_60_120_time");
+      }
     } else if (minutesAgo <= thresholds.segment_120_300) {
-      appliedClass = "segment_120_300";
+      appliedClass = ["segment_120_300"];
+      if (shouldAppendTimeBlock) {
+        // element.textContent += " (0-1 min)";
+        appliedClass.push("segment_120_300_time");
+      }
     } else if (minutesAgo <= thresholds.segment_300_720) {
-      appliedClass = "segment_300_720";
+      appliedClass = ["segment_300_720"];
+      if (shouldAppendTimeBlock) {
+        // element.textContent += " (0-1 min)";
+        appliedClass.push("segment_300_720_time");
+      }
     } else if (minutesAgo <= thresholds.segment_720_1440) {
-      appliedClass = "segment_720_1440";
+      appliedClass = ["segment_720_1440"];
+      if (shouldAppendTimeBlock) {
+        // element.textContent += " (0-1 min)";
+        appliedClass.push("egment_720_1440_time");
+      }
     } else if (minutesAgo <= thresholds.segment_1440_2880) {
-      appliedClass = "segment_1440_2880";
+      appliedClass = ["segment_1440_2880"];
+      if (shouldAppendTimeBlock) {
+        // element.textContent += " (0-1 min)";
+        appliedClass.push("segment_1440_2880_time");
+      }
     } else if (minutesAgo <= thresholds.segment_2880_10080) {
-      appliedClass = "segment_2880_10080";
+      appliedClass = ["segment_2880_10080"];
+      if (shouldAppendTimeBlock) {
+        // element.textContent += " (0-1 min)";
+        appliedClass.push("segment_2880_10080_time");
+      }
+    } else {
+      appliedClass = ["segment_last"]; // Default to the oldest segment
+      if (shouldAppendTimeBlock) {
+        // element.textContent += " (0-1 min)";
+        appliedClass.push("segment_last_time");
+      }
     }
-    // else it remains segment11
+    // else it remains segment_last
 
-    element.classList.add(appliedClass);
+    element.classList.add(...appliedClass);
     element.dataset.coloredTimestampProcessed = true; // Mark as processed to avoid reprocessing by mistake
   });
 
@@ -174,6 +233,12 @@ function setupObserver() {
 // Initialize extension
 function init() {
   console.log("Initializing GCP Log Timestamp Colorizer"); // Optional: for debugging
+
+  // Load initial settings
+  chrome.storage.local.get(["appendTimeBlock"], (result) => {
+    shouldAppendTimeBlock = result.appendTimeBlock !== false; // Default to true if not set
+    console.log("Initial appendTimeBlock setting:", shouldAppendTimeBlock); // Optional: for debugging
+  });
   applyTimestampColors(); // Apply colors on initial load
   setupObserver(); // Set up observer for dynamic content
 
@@ -186,6 +251,17 @@ function init() {
   intervalId = setInterval(applyTimestampColors, ONE_MINUTE_IN_MS);
   console.log(`Set interval timer (ID: ${intervalId}) to run every minute.`); // Optional: for debugging
 }
+
+// Listen for changes in storage
+chrome.storage.onChanged.addListener((changes, namespace) => {
+  if (namespace === "local" && changes.appendTimeBlock) {
+    const newValue = changes.appendTimeBlock.newValue;
+    shouldAppendTimeBlock = newValue !== false; // Update the variable, default to true if undefined/null
+    console.log("appendTimeBlock setting updated:", shouldAppendTimeBlock); // Optional: for debugging
+    // If the change requires immediate UI update, you might call a function here
+    // e.g., applyTimestampColors(); // Re-apply if the setting affects coloring/display
+  }
+});
 
 // Run when DOM is loaded or immediately if already loaded
 if (document.readyState === "loading") {

@@ -4,6 +4,7 @@
   "version": "1.2",
   "description": "Adds colored timestamps to console logs based on recency",
   "host_permissions": ["https://console.cloud.google.com/logs*"],
+  "permissions": ["storage", "activeTab"],
   "action": {
     "default_icon": {
       "16": "images/icon16.png",
@@ -14,7 +15,7 @@
       "128": "images/icon128.png",
       "256": "images/icon256.png"
     },
-    "default_popup": "popup.html"
+    "default_popup": "options.html"
   },
   "content_scripts": [
     {
@@ -22,5 +23,9 @@
       "js": ["content.js"],
       "css": ["styles.css"]
     }
-  ]
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  }
 }

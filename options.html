@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Log Time Colors</title>
+    <title>Colored GCP Log Time Options</title>
     <link rel="stylesheet" href="styles.css" />
     <style>
       body {
@@ -61,7 +61,12 @@
     </style>
   </head>
   <body>
-    <h1>Log Timestamp Colors</h1>
+    <h1>Options</h1>
+    <label>
+      <input type="checkbox" id="appendTimeBlock" /> Append time block (e.g.
+      &lt;1m, 1-2m, etc.)
+    </label>
+    <hr />
 
     <table>
       <thead>
@@ -145,5 +150,6 @@
         </tr>
       </tbody>
     </table>
+    <script src="options.js"></script>
   </body>
 </html>
