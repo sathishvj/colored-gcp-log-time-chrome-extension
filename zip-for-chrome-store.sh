@@ -1,3 +1,3 @@
 #!/bin/bash
 
-zip -r chrome-store.zip manifest.json js css popup images/
+zip -r chrome-store.zip manifest.json *.js *.html *.css images/icon*.png
