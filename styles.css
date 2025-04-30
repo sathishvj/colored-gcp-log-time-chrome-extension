@@ -1,0 +1,160 @@
+/* Styles for the timestamp colors */
+.swatch-segment_0_1 {
+  background-color: #000000 !important;
+}
+.segment_0_1 {
+  color: #000000 !important;
+}
+.segment_0_1::after {
+  color: #555555 !important;
+  font-style: italic !important;
+  font-weight: bold !important;
+  content: " <1m" !important;
+}
+
+.swatch-segment_1_2 {
+  background-color: #ff0000 !important;
+}
+.segment_1_2 {
+  color: #ff0000 !important;
+}
+.segment_1_2::after {
+  color: #555555 !important;
+  font-style: italic !important;
+  font-weight: bold !important;
+  content: " 1-2m" !important;
+}
+
+.swatch-segment_2_3 {
+  background-color: #0004ff !important;
+}
+.segment_2_3 {
+  color: #0004ff !important;
+}
+.segment_2_3::after {
+  color: #555555 !important;
+  font-style: italic !important;
+  font-weight: bold !important;
+  content: " 2-3m" !important;
+}
+
+.swatch-segment_3_5 {
+  background-color: #9bca00 !important;
+}
+.segment_3_5 {
+  color: #9bca00 !important;
+}
+.segment_3_5::after {
+  color: #555555 !important;
+  content: " 3-5m" !important;
+}
+
+.swatch-segment_5_15 {
+  background-color: #9b00ff !important;
+}
+.segment_5_15 {
+  color: #9b00ff !important;
+}
+.segment_5_15::after {
+  color: #555555 !important;
+  content: " 5-15m" !important;
+}
+
+.swatch-segment_15_30 {
+  background-color: #019a00 !important;
+}
+.segment_15_30 {
+  color: #019a00 !important;
+}
+.segment_15_30::after {
+  color: #555555 !important;
+  content: " 15-30m" !important;
+}
+
+.swatch-segment_30_60 {
+  background-color: #f35999 !important;
+}
+.segment_30_60 {
+  color: #f35999 !important;
+}
+.segment_30_60::after {
+  color: #555555 !important;
+  content: " 30m-1h" !important;
+}
+
+.swatch-segment_60_120 {
+  background-color: #004eff !important;
+}
+.segment_60_120 {
+  color: #004eff !important;
+}
+.segment_60_120::after {
+  color: #555555 !important;
+  content: " 1-2h" !important;
+}
+
+.swatch-segment_120_300 {
+  background-color: #ff4c01 !important;
+}
+.segment_120_300 {
+  color: #ff4c01 !important;
+}
+.segment_120_300::after {
+  color: #555555 !important;
+  content: " 2-5h" !important;
+}
+
+.swatch-segment_300_720 {
+  background-color: #6e687d !important;
+}
+.segment_300_720 {
+  color: #6e687d !important;
+}
+.segment_300_720::after {
+  color: #555555 !important;
+  content: " 5-12h" !important;
+}
+
+.swatch-segment_720_1440 {
+  background-color: #9a0200 !important;
+}
+.segment_720_1440 {
+  color: #9a0200 !important;
+}
+.segment_720_1440::after {
+  color: #555555 !important;
+  content: " 12-24h" !important;
+}
+
+.swatch-segment_1440_2880 {
+  background-color: #67b4ff !important;
+}
+.segment_1440_2880 {
+  color: #67b4ff !important;
+}
+.segment_1440_2880::after {
+  color: #555555 !important;
+  content: " 1-2d" !important;
+}
+
+.swatch-segment_2880_10080 {
+  background-color: #fd9a00 !important;
+}
+.segment_2880_10080 {
+  color: #fd9a00 !important;
+}
+.segment_2880_10080::after {
+  color: #555555 !important;
+  content: " 2-7d" !important;
+}
+
+.swatch-segment11 {
+  background-color: #5f00dc !important;
+}
+.segment11 {
+  color: #5f00dc !important;
+}
+.segment11::after {
+  color: #555555 !important;
+  content: " >7d" !important;
+}

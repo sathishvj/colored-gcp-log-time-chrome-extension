@@ -1,15 +1,18 @@
 // Default time threshold settings (in minutes)
 const DEFAULT_THRESHOLDS = {
-  segment01: 5,
-  segment02: 15,
-  segment03: 30,
-  segment04: 60,
-  segment05: 120,
-  segment06: 300,
-  segment07: 720,
-  segment08: 1440,
-  segment09: 2880,
-  segment10: 10080,
+  segment_0_1: 1,
+  segment_1_2: 2,
+  segment_2_3: 3,
+  segment_3_5: 5,
+  segment_5_15: 15,
+  segment_15_30: 30,
+  segment_30_60: 60,
+  segment_60_120: 120,
+  segment_120_300: 300,
+  segment_300_720: 720,
+  segment_720_1440: 1440,
+  segment_1440_2880: 2880,
+  segment_2880_10080: 10080,
 };
 
 // User settings
@@ -58,16 +61,19 @@ function applyTimestampColors() {
 
     // Define all possible segment classes
     const segmentClasses = [
-      "segment01",
-      "segment02",
-      "segment03",
-      "segment04",
-      "segment05",
-      "segment06",
-      "segment07",
-      "segment08",
-      "segment09",
-      "segment10",
+      "segment_0_1",
+      "segment_1_2",
+      "segment_2_3",
+      "segment_3_5",
+      "segment_5_15",
+      "segment_15_30",
+      "segment_30_60",
+      "segment_60_120",
+      "segment_120_300",
+      "segment_300_720",
+      "segment_720_1440",
+      "segment_1440_2880",
+      "segment_2880_10080",
       "segment11",
     ];
 
@@ -76,26 +82,32 @@ function applyTimestampColors() {
 
     // Apply appropriate class based on recency
     let appliedClass = "segment11"; // Default to the oldest segment
-    if (minutesAgo <= thresholds.segment01) {
-      appliedClass = "segment01";
-    } else if (minutesAgo <= thresholds.segment02) {
-      appliedClass = "segment02";
-    } else if (minutesAgo <= thresholds.segment03) {
-      appliedClass = "segment03";
-    } else if (minutesAgo <= thresholds.segment04) {
-      appliedClass = "segment04";
-    } else if (minutesAgo <= thresholds.segment05) {
-      appliedClass = "segment05";
-    } else if (minutesAgo <= thresholds.segment06) {
-      appliedClass = "segment06";
-    } else if (minutesAgo <= thresholds.segment07) {
-      appliedClass = "segment07";
-    } else if (minutesAgo <= thresholds.segment08) {
-      appliedClass = "segment08";
-    } else if (minutesAgo <= thresholds.segment09) {
-      appliedClass = "segment09";
-    } else if (minutesAgo <= thresholds.segment10) {
-      appliedClass = "segment10";
+    if (minutesAgo <= thresholds.segment_0_1) {
+      appliedClass = "segment_0_1";
+    } else if (minutesAgo <= thresholds.segment_1_2) {
+      appliedClass = "segment_1_2";
+    } else if (minutesAgo <= thresholds.segment_2_3) {
+      appliedClass = "segment_2_3";
+    } else if (minutesAgo <= thresholds.segment_3_5) {
+      appliedClass = "segment_3_5";
+    } else if (minutesAgo <= thresholds.segment_5_15) {
+      appliedClass = "segment_5_15";
+    } else if (minutesAgo <= thresholds.segment_15_30) {
+      appliedClass = "segment_15_30";
+    } else if (minutesAgo <= thresholds.segment_30_60) {
+      appliedClass = "segment_30_60";
+    } else if (minutesAgo <= thresholds.segment_60_120) {
+      appliedClass = "segment_60_120";
+    } else if (minutesAgo <= thresholds.segment_120_300) {
+      appliedClass = "segment_120_300";
+    } else if (minutesAgo <= thresholds.segment_300_720) {
+      appliedClass = "segment_300_720";
+    } else if (minutesAgo <= thresholds.segment_720_1440) {
+      appliedClass = "segment_720_1440";
+    } else if (minutesAgo <= thresholds.segment_1440_2880) {
+      appliedClass = "segment_1440_2880";
+    } else if (minutesAgo <= thresholds.segment_2880_10080) {
+      appliedClass = "segment_2880_10080";
     }
     // else it remains segment11
 

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log Time Colors</title>
+    <link rel="stylesheet" href="styles.css" />
     <style>
       body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -57,41 +58,6 @@
         vertical-align: middle;
         border-radius: 2px;
       }
-
-      /* Define swatch background colors based on styles.css */
-      .swatch-segment01 {
-        background-color: #000000;
-      }
-      .swatch-segment02 {
-        background-color: #9b00ff;
-      }
-      .swatch-segment03 {
-        background-color: #019a00;
-      }
-      .swatch-segment04 {
-        background-color: #f35999;
-      }
-      .swatch-segment05 {
-        background-color: #004eff;
-      }
-      .swatch-segment06 {
-        background-color: #ff4c01;
-      }
-      .swatch-segment07 {
-        background-color: #6e687d;
-      }
-      .swatch-segment08 {
-        background-color: #9a0200;
-      }
-      .swatch-segment09 {
-        background-color: #67b4ff;
-      }
-      .swatch-segment10 {
-        background-color: #fd9a00;
-      }
-      .swatch-segment11 {
-        background-color: #5f00dc;
-      }
     </style>
   </head>
   <body>
@@ -105,50 +71,77 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Data derived from content.js DEFAULT_THRESHOLDS and styles.css -->
         <tr>
-          <td>Up to 5 minutes</td>
-          <td><span class="color-swatch swatch-segment01"></span> #9a0200</td>
+          <td>Up to 1 minute</td>
+          <td><span class="color-swatch swatch-segment_0_1"></span></td>
+        </tr>
+        <tr>
+          <td>1 - 2 minutes</td>
+          <td><span class="color-swatch swatch-segment_1_2"></span></td>
+        </tr>
+        <tr>
+          <td>2 - 3 minutes</td>
+          <td><span class="color-swatch swatch-segment_2_3"></span></td>
+        </tr>
+        <tr>
+          <td>3 - 5 minutes</td>
+          <td><span class="color-swatch swatch-segment_3_5"></span></td>
         </tr>
         <tr>
           <td>5 - 15 minutes</td>
-          <td><span class="color-swatch swatch-segment02"></span> #019a00</td>
+          <td><span class="color-swatch swatch-segment_5_15"></span></td>
         </tr>
         <tr>
           <td>15 - 30 minutes</td>
-          <td><span class="color-swatch swatch-segment03"></span> #9b00ff</td>
+          <td>
+            <span class="color-swatch swatch-segment_15_30"></span>
+          </td>
         </tr>
         <tr>
           <td>30 minutes - 1 hour</td>
-          <td><span class="color-swatch swatch-segment04"></span> #f35999</td>
+          <td>
+            <span class="color-swatch swatch-segment_30_60"></span>
+          </td>
         </tr>
         <tr>
           <td>1 hour - 2 hours</td>
-          <td><span class="color-swatch swatch-segment05"></span> #004eff</td>
+          <td>
+            <span class="color-swatch swatch-segment_60_120"></span>
+          </td>
         </tr>
         <tr>
           <td>2 hours - 5 hours</td>
-          <td><span class="color-swatch swatch-segment06"></span> #ff4c01</td>
+          <td>
+            <span class="color-swatch swatch-segment_120_300"></span>
+          </td>
         </tr>
         <tr>
           <td>5 hours - 12 hours</td>
-          <td><span class="color-swatch swatch-segment07"></span> #9a0200</td>
+          <td>
+            <span class="color-swatch swatch-segment_300_720"></span>
+          </td>
         </tr>
         <tr>
           <td>12 hours - 1 day</td>
-          <td><span class="color-swatch swatch-segment08"></span> #fd9a00</td>
+          <td>
+            <span class="color-swatch swatch-segment_720_1440"></span>
+          </td>
         </tr>
         <tr>
           <td>1 day - 2 days</td>
-          <td><span class="color-swatch swatch-segment09"></span> #67b4ff</td>
+          <td>
+            <span class="color-swatch swatch-segment_1440_2880"></span>
+          </td>
         </tr>
         <tr>
           <td>2 days - 1 week</td>
-          <td><span class="color-swatch swatch-segment10"></span> #803200</td>
+          <td>
+            <span class="color-swatch swatch-segment_2880_10080"></span>
+          </td>
         </tr>
         <tr>
           <td>Over 1 week</td>
-          <td><span class="color-swatch swatch-segment11"></span> #000000</td>
+          <td><span class="color-swatch swatch-segment11"></span></td>
         </tr>
       </tbody>
     </table>
