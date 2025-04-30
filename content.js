@@ -108,10 +108,10 @@ function applyTimestampColors() {
         appliedClass.push("segment_3_5_time");
       }
     } else if (minutesAgo <= thresholds.segment_5_15) {
-      appliedClass = ["segment_15_30"];
+      appliedClass = ["segment_5_15"];
       if (shouldAppendTimeBlock) {
         // element.textContent += " (0-1 min)";
-        appliedClass.push("segment_15_30_time");
+        appliedClass.push("segment_5_15_time");
       }
     } else if (minutesAgo <= thresholds.segment_15_30) {
       appliedClass = ["segment_15_30"];
