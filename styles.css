@@ -12,10 +12,10 @@
 }
 
 .swatch-segment_1_2 {
-  background-color: #ff0000 !important;
+  background-color: #9b00ff !important;
 }
 .segment_1_2 {
-  color: #ff0000 !important;
+  color: #9b00ff !important;
 }
 .segment_1_2_time::after {
   color: #555555 !important;
@@ -36,10 +36,10 @@
 }
 
 .swatch-segment_3_5 {
-  background-color: #9bca00 !important;
+  background-color: #654321 !important;
 }
 .segment_3_5 {
-  color: #9bca00 !important;
+  color: #654321 !important;
 }
 .segment_3_5_time::after {
   color: #555555 !important;
@@ -47,10 +47,10 @@
 }
 
 .swatch-segment_5_15 {
-  background-color: #9b00ff !important;
+  background-color: #ff0000 !important;
 }
 .segment_5_15 {
-  color: #9b00ff !important;
+  color: #ff0000 !important;
 }
 .segment_5_15_time::after {
   color: #555555 !important;
