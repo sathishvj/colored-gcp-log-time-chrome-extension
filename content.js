@@ -93,7 +93,7 @@ function applyTimestampColors() {
       appliedClass = ["segment_1_2"];
       if (shouldAppendTimeBlock) {
         // element.textContent += " (0-1 min)";
-        appliedClass.push("segment_0_1_time");
+        appliedClass.push("segment_1_2_time");
       }
     } else if (minutesAgo <= thresholds.segment_2_3) {
       appliedClass = ["segment_2_3"];
