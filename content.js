@@ -39,7 +39,10 @@ function getMinutesAgo(timestampText) {
 
     const now = new Date();
     const millisAgo = now - timestamp;
-    return millisAgo / (1000 * 60); // Convert to minutes
+
+    const minutesAgo = millisAgo / (1000 * 60); // Convert to minutes
+    // console.log( "Parsed timestamp:", cleanedTimestampText, " | Minutes ago: ", minutesAgo);
+    return minutesAgo;
   } catch (e) {
     console.error("Error parsing timestamp:", timestampText, e);
     return Infinity;
@@ -77,94 +80,96 @@ function applyTimestampColors() {
       "segment_2880_10080",
       "segment_last",
     ];
+    const segmentTimeClasses = [
+      "segment_0_1_time",
+      "segment_1_2_time",
+      "segment_2_3_time",
+      "segment_3_5_time",
+      "segment_5_15_time",
+      "segment_15_30_time",
+      "segment_30_60_time",
+      "segment_60_120_time",
+      "segment_120_300_time",
+      "segment_300_720_time",
+      "segment_720_1440_time",
+      "segment_1440_2880_time",
+      "segment_2880_10080_time",
+      "segment_last_time",
+    ];
 
     // Remove existing segment classes efficiently
-    element.classList.remove(...segmentClasses);
+    element.classList.remove(...segmentClasses, ...segmentTimeClasses);
 
     // Apply appropriate class based on recency
     let appliedClass = []; // Default to the oldest segment
     if (minutesAgo <= thresholds.segment_0_1) {
       appliedClass = ["segment_0_1"];
       if (shouldAppendTimeBlock) {
-        // element.textContent += " (0-1 min)";
         appliedClass.push("segment_0_1_time");
       }
     } else if (minutesAgo <= thresholds.segment_1_2) {
       appliedClass = ["segment_1_2"];
       if (shouldAppendTimeBlock) {
-        // element.textContent += " (0-1 min)";
         appliedClass.push("segment_1_2_time");
       }
     } else if (minutesAgo <= thresholds.segment_2_3) {
       appliedClass = ["segment_2_3"];
       if (shouldAppendTimeBlock) {
-        // element.textContent += " (0-1 min)";
         appliedClass.push("segment_2_3_time");
       }
     } else if (minutesAgo <= thresholds.segment_3_5) {
       appliedClass = ["segment_3_5"];
       if (shouldAppendTimeBlock) {
-        // element.textContent += " (0-1 min)";
         appliedClass.push("segment_3_5_time");
       }
     } else if (minutesAgo <= thresholds.segment_5_15) {
       appliedClass = ["segment_5_15"];
       if (shouldAppendTimeBlock) {
-        // element.textContent += " (0-1 min)";
         appliedClass.push("segment_5_15_time");
       }
     } else if (minutesAgo <= thresholds.segment_15_30) {
       appliedClass = ["segment_15_30"];
       if (shouldAppendTimeBlock) {
-        // element.textContent += " (0-1 min)";
         appliedClass.push("segment_15_30_time");
       }
     } else if (minutesAgo <= thresholds.segment_30_60) {
       appliedClass = ["segment_30_60"];
       if (shouldAppendTimeBlock) {
-        // element.textContent += " (0-1 min)";
         appliedClass.push("segment_30_60_time");
       }
     } else if (minutesAgo <= thresholds.segment_60_120) {
       appliedClass = ["segment_60_120"];
       if (shouldAppendTimeBlock) {
-        // element.textContent += " (0-1 min)";
         appliedClass.push("segment_60_120_time");
       }
     } else if (minutesAgo <= thresholds.segment_120_300) {
       appliedClass = ["segment_120_300"];
       if (shouldAppendTimeBlock) {
-        // element.textContent += " (0-1 min)";
         appliedClass.push("segment_120_300_time");
       }
     } else if (minutesAgo <= thresholds.segment_300_720) {
       appliedClass = ["segment_300_720"];
       if (shouldAppendTimeBlock) {
-        // element.textContent += " (0-1 min)";
         appliedClass.push("segment_300_720_time");
       }
     } else if (minutesAgo <= thresholds.segment_720_1440) {
       appliedClass = ["segment_720_1440"];
       if (shouldAppendTimeBlock) {
-        // element.textContent += " (0-1 min)";
-        appliedClass.push("egment_720_1440_time");
+        appliedClass.push("segment_720_1440_time");
       }
     } else if (minutesAgo <= thresholds.segment_1440_2880) {
       appliedClass = ["segment_1440_2880"];
       if (shouldAppendTimeBlock) {
-        // element.textContent += " (0-1 min)";
         appliedClass.push("segment_1440_2880_time");
       }
     } else if (minutesAgo <= thresholds.segment_2880_10080) {
       appliedClass = ["segment_2880_10080"];
       if (shouldAppendTimeBlock) {
-        // element.textContent += " (0-1 min)";
         appliedClass.push("segment_2880_10080_time");
       }
     } else {
       appliedClass = ["segment_last"]; // Default to the oldest segment
       if (shouldAppendTimeBlock) {
-        // element.textContent += " (0-1 min)";
         appliedClass.push("segment_last_time");
       }
     }
@@ -172,6 +177,8 @@ function applyTimestampColors() {
 
     element.classList.add(...appliedClass);
     element.dataset.coloredTimestampProcessed = true; // Mark as processed to avoid reprocessing by mistake
+
+    // console.log(element.classList);
   });
 
   // Clean up the processed marker for the next run (important for the interval)
